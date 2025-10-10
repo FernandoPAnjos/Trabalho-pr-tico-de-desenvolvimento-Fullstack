@@ -1,34 +1,6 @@
-Client
-This project was generated using Angular CLI version 20.2.2.
+<img width="1214" height="710" alt="image" src="https://github.com/user-attachments/assets/b5a3b2fd-fe0b-41ec-a672-94a7e151714e" />
 
-Development server
-To start a local development server, run:
+<img width="1150" height="639" alt="image" src="https://github.com/user-attachments/assets/58259b23-9c97-470c-a16d-32420e09e5f1" />
 
-ng serve
-Once the server is running, open your browser and navigate to http://localhost:4200/. The application will automatically reload whenever you modify any of the source files.
+<img width="1030" height="593" alt="image" src="https://github.com/user-attachments/assets/eb66077b-d6ed-40bd-afbb-b33d8b269810" />
 
-Code scaffolding
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-ng generate component component-name
-For a complete list of available schematics (such as components, directives, or pipes), run:
-
-ng generate --help
-Building
-To build the project run:
-
-ng build
-This will compile your project and store the build artifacts in the dist/ directory. By default, the production build optimizes your application for performance and speed.
-
-Running unit tests
-To execute unit tests with the Karma test runner, use the following command:
-
-ng test
-Running end-to-end tests
-For end-to-end (e2e) testing, run:
-
-ng e2e
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-Additional Resources
-For more information on using the Angular CLI, including detailed command references, visit the Angular CLI Overview and Command Reference page.
