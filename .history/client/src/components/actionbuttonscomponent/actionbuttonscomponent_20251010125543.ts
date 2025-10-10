@@ -22,6 +22,18 @@ export class Actionbuttonscomponent {
 
   constructor(public dialog: MatDialog, private userService: UserService) { }
 
+   ngOnChanges(changes: SimpleChanges) {
+    // Este método será chamado sempre que um @Input (como 'selection') for atualizado pelo pai
+    if (changes['selection']) {
+      console.log('ActionButtonsComponent: A propriedade [selection] foi recebida ou ATUALIZADA!');
+      
+      // Para forçar a atualização do botão, podemos nos inscrever nas mudanças da seleção
+      // Esta é a solução definitiva se a simples passagem de @Input não funcionar
+      this.selection.changed.subscribe(() => {
+      });
+    }
+  }
+
   abrirDialogAdicionar(): void {
     const dialogRef = this.dialog.open(Dialogcomponent, {
       width: '650px',

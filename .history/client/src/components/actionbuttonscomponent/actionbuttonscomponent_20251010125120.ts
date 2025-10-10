@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,6 +21,20 @@ export class Actionbuttonscomponent {
   @Output() usersDeleted = new EventEmitter<void>();
 
   constructor(public dialog: MatDialog, private userService: UserService) { }
+
+   ngOnChanges(changes: SimpleChanges) {
+    // Este método será chamado sempre que um @Input (como 'selection') for atualizado pelo pai
+    if (changes['selection']) {
+      console.log('ActionButtonsComponent: A propriedade [selection] foi recebida ou ATUALIZADA!');
+      
+      // Para forçar a atualização do botão, podemos nos inscrever nas mudanças da seleção
+      // Esta é a solução definitiva se a simples passagem de @Input não funcionar
+      this.selection.changed.subscribe(() => {
+        // Este código será executado toda vez que um item for selecionado ou deselecionado
+        console.log('ActionButtonsComponent: A SELEÇÃO MUDOU! Itens selecionados:', this.selection.selected.length);
+      });
+    }
+  }
 
   abrirDialogAdicionar(): void {
     const dialogRef = this.dialog.open(Dialogcomponent, {

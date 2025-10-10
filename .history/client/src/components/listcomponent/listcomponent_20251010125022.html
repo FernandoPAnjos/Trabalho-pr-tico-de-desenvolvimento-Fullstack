@@ -46,7 +46,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
   </table>
-  
+  <p style="margin: 20px;">
+  Itens selecionados (dentro do ListComponent): {{ selection.selected.length }}
+</p>
 
   @if (dataSource.filteredData.length === 0 && dataSource.filter) {
     <p class="no-results-message">

@@ -30,6 +30,8 @@ export class App {
   }
 
    onUsersDeleted(): void {
+    console.log('AppComponent: Fui notificado que usuários foram deletados. Atualizando a lista...');
+    // Usa a referência do @ViewChild para chamar o método público do ListComponent
     this.listComponent.carregarTodosUsuarios();
   }
   

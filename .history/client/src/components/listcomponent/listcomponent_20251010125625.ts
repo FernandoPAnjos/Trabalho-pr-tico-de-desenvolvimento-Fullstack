@@ -16,9 +16,11 @@ export class Listcomponent implements OnInit {
 
   displayedColumns: string[] = ['select', 'id', 'name', 'email', 'age', 'status'];
 
+  // A ÚNICA fonte de dados para a tabela
   dataSource = new MatTableDataSource<User>();
   selection = new SelectionModel<User>(true, []);
 
+  // O @Input agora vai usar o filtro nativo do dataSource
   @Input() set termoBusca(value: string) {
     this.aplicarFiltro(value);
   }

@@ -30,6 +30,7 @@ export class App {
   }
 
    onUsersDeleted(): void {
+    console.log('AppComponent: Fui notificado que usuários foram deletados. Atualizando a lista...');
     this.listComponent.carregarTodosUsuarios();
   }
   
