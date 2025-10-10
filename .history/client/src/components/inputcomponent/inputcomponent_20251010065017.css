@@ -1,0 +1,12 @@
+.example-full-width {
+  width: 80%;  
+  padding-right: 15px;
+}
+
+.input-container {
+  width: 100vh;
+}
+
+main {
+  border: 2px solid rgb(255, 0, 0);
+}
