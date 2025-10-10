@@ -85,7 +85,7 @@ export class Actionbuttonscomponent {
             this.userActionComplete.emit(); 
           },
           error: (err) => {
-            alert('Falha ao atualizar usuário.');
+            alert('Falha ao atualizar usuário');
             console.error(err);
           }
         });

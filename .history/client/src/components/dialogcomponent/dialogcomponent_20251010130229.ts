@@ -31,16 +31,13 @@ export class Dialogcomponent {
   )
    {
     this.isEditMode = !!this.data;
-
+    
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       age: [null, [Validators.required, Validators.min(1)]],
       status: [true] 
     });
-    if (this.isEditMode) {
-      this.userForm.patchValue(this.data);
-    }
   }
 
   onCancel(): void {

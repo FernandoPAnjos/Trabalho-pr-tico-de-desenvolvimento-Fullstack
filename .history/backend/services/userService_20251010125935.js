@@ -60,7 +60,7 @@ const updateUser = async (id, userData) => {
   if (error) throw error;
 
   if (data.length === 0) {
-    throw new Error('O usuário não foi encontrado');
+    throw new Error('O usuário não foi encontrado.');
   }
 
   return data[0];
@@ -71,5 +71,4 @@ export default {
   searchUsersByTerm,
   createUser,
   deleteUser,
-  updateUser,
 };

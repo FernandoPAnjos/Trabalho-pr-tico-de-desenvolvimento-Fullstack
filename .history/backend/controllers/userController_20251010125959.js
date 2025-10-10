@@ -52,7 +52,7 @@ const updateUser = async (req, res) => {
     const userData = req.body; 
 
     const updatedUser = await UserService.updateUser(id, userData);
-    res.status(200).json(updatedUser);
+    res.status(200).json(updatedUser); // 200 OK
   } catch (err) {
     if (err.message.includes('não encontrado')) {
       return res.status(404).json({ error: err.message });
@@ -66,5 +66,4 @@ export default {
   searchUsers,
   createUser,
   deleteUser,
-  updateUser,
 };

@@ -69,11 +69,13 @@ export class Actionbuttonscomponent {
   }
 
   abrirDialogEditar(): void {
+    // Pega o único usuário selecionado
     const selectedUser = this.selection.selected[0];
 
-    const dialogRef = this.dialog.open(Dialogcomponent, {
-      width: '650px',
-      data: selectedUser 
+    // Abre o mesmo dialog, mas agora passando os dados do usuário
+    const dialogRef = this.dialog.open(AddUserDialogComponent, {
+      width: '450px',
+      data: selectedUser // <-- A MÁGICA ACONTECE AQUI
     });
 
     dialogRef.afterClosed().subscribe(resultado => {
@@ -81,8 +83,8 @@ export class Actionbuttonscomponent {
         // Chama o serviço de ATUALIZAÇÃO
         this.userService.updateUser(selectedUser.id, resultado).subscribe({
           next: () => {
-            alert('O usuário foi atualizado com sucesso.');
-            this.userActionComplete.emit(); 
+            alert('Usuário atualizado com sucesso!');
+            this.userActionComplete.emit(); // Avisa o pai para recarregar a lista
           },
           error: (err) => {
             alert('Falha ao atualizar usuário.');

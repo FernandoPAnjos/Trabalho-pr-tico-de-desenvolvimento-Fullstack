@@ -51,6 +51,8 @@ const deleteUser = async (id) => {
 };
 
 const updateUser = async (id, userData) => {
+  // Usamos .update() com os novos dados, .eq() para achar o usuário,
+  // e .select() para retornar o registro atualizado.
   const { data, error } = await supabase
     .from("users")
     .update(userData)
@@ -60,7 +62,7 @@ const updateUser = async (id, userData) => {
   if (error) throw error;
 
   if (data.length === 0) {
-    throw new Error('O usuário não foi encontrado');
+    throw new Error('Usuário não encontrado para atualização.');
   }
 
   return data[0];
@@ -71,5 +73,4 @@ export default {
   searchUsersByTerm,
   createUser,
   deleteUser,
-  updateUser,
 };

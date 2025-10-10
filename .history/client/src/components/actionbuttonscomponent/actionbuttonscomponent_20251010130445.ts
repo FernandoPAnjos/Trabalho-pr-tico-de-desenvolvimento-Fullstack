@@ -19,7 +19,7 @@ export class Actionbuttonscomponent {
 
   @Output() userAdded = new EventEmitter<void>();
   @Output() usersDeleted = new EventEmitter<void>();
-  @Output() userActionComplete = new EventEmitter<void>();
+    @Output() userActionComplete = new EventEmitter<void>();
 
 
   constructor(public dialog: MatDialog, private userService: UserService) { }
@@ -66,31 +66,6 @@ export class Actionbuttonscomponent {
           console.error("Ocorreu um erro ao deletar usuários", err);
         });
     }
-  }
-
-  abrirDialogEditar(): void {
-    const selectedUser = this.selection.selected[0];
-
-    const dialogRef = this.dialog.open(Dialogcomponent, {
-      width: '650px',
-      data: selectedUser 
-    });
-
-    dialogRef.afterClosed().subscribe(resultado => {
-      if (resultado) {
-        // Chama o serviço de ATUALIZAÇÃO
-        this.userService.updateUser(selectedUser.id, resultado).subscribe({
-          next: () => {
-            alert('O usuário foi atualizado com sucesso.');
-            this.userActionComplete.emit(); 
-          },
-          error: (err) => {
-            alert('Falha ao atualizar usuário.');
-            console.error(err);
-          }
-        });
-      }
-    });
   }
 
 }

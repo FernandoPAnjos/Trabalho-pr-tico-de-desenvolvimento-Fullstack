@@ -71,5 +71,4 @@ export default {
   searchUsersByTerm,
   createUser,
   deleteUser,
-  updateUser,
 };

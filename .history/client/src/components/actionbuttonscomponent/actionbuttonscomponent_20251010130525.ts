@@ -81,7 +81,7 @@ export class Actionbuttonscomponent {
         // Chama o serviço de ATUALIZAÇÃO
         this.userService.updateUser(selectedUser.id, resultado).subscribe({
           next: () => {
-            alert('O usuário foi atualizado com sucesso.');
+            alert('Usuário atualizado com sucesso!');
             this.userActionComplete.emit(); 
           },
           error: (err) => {

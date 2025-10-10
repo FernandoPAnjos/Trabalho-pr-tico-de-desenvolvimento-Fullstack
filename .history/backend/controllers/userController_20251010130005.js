@@ -66,5 +66,5 @@ export default {
   searchUsers,
   createUser,
   deleteUser,
-  updateUser,
+  
 };

@@ -68,29 +68,4 @@ export class Actionbuttonscomponent {
     }
   }
 
-  abrirDialogEditar(): void {
-    const selectedUser = this.selection.selected[0];
-
-    const dialogRef = this.dialog.open(Dialogcomponent, {
-      width: '650px',
-      data: selectedUser 
-    });
-
-    dialogRef.afterClosed().subscribe(resultado => {
-      if (resultado) {
-        // Chama o serviço de ATUALIZAÇÃO
-        this.userService.updateUser(selectedUser.id, resultado).subscribe({
-          next: () => {
-            alert('O usuário foi atualizado com sucesso.');
-            this.userActionComplete.emit(); 
-          },
-          error: (err) => {
-            alert('Falha ao atualizar usuário.');
-            console.error(err);
-          }
-        });
-      }
-    });
-  }
-
 }
