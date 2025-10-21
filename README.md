@@ -1,4 +1,6 @@
 Inicializar o projeto com node serve.js dentro da pasta backend.
+
+
 Inicializar o frontend com ng serve -o dentro da pasta client.
 
 
